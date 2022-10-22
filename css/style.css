@@ -1,17 +1,38 @@
 *{
   box-sizing: border-box;
+  background-color: brown;
 }
 
-header{
-  background-color: aquamarine;
-  height: 450px;
-  position: relative;
+
+p::first-letter{
+  font-size: 36px;
+  color: red;
 }
-/* аналогічно розтошувати h1 по центру по горизонталі*/
-h1{
-  font-size: 52px;
-  position: absolute;
-  top: 50%; /* відсоток від розміру батьківського елементу */
-  left: 50%;
-  transform: translate(-50%, -50%); /* відсоток від свого розміру */
+
+p::first-line {
+  color: green;
+}
+
+p::selection {
+  color: wheat;
+  background-color: lightcoral;
+}
+
+/* content обов'язковий для ::before і p::after*/
+p::before {
+  content: 'Paragraph: ';
+}
+
+p::after {
+  content: '!!!';
+  color: red;
+}
+/* За  допомогою ::before, ::after додати до Lorem << >> лапки */
+
+.quotes::before {
+  content: '<<';
+}
+
+.quotes::after {
+  content: '>>';
 }
