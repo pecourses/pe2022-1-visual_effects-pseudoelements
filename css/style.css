@@ -2,42 +2,16 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: orange;
-}
-
 header{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  background-color: aquamarine;
+  height: 450px;
   position: relative;
 }
-
-.blur-bg {
+/* аналогічно розтошувати h1 по центру по горизонталі*/
+h1{
+  font-size: 52px;
   position: absolute;
-  background: url(https://images.pexels.com/photos/13366951/pexels-photo-13366951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  filter: blur(3px); 
-  transition: filter 1s;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-
-h1 {
-  transition: filter 1s;
-}
-
-h1:hover{
-  filter: blur(3px);
-}
-
-h1:hover + .blur-bg {
-  filter: blur(0);
+  top: 50%; /* відсоток від розміру батьківського елементу */
+  left: 50%;
+  transform: translate(-50%, -50%); /* відсоток від свого розміру */
 }
