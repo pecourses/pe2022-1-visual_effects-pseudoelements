@@ -2,48 +2,54 @@
   box-sizing: border-box;
 }
 
-ul{
-  font-size: 0;
-  margin: 20px;
-  white-space: nowrap;
+section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  max-width: 800px;
+  width: 100%;
+  min-width: 320px;
+  margin: 0 auto;
+  border: 5px solid red;
 }
 
-li {
-  display: inline-block;
+article{
+  max-width: 250px;
+  min-width: 200px;
+  width: 100%;
+  border: 5px solid blue;
+  padding: 30px 10px;
+
 }
 
-a{
-  text-decoration: none;
-  color: inherit;
-  padding: 10px 20px;
-  font-size: 16px;
-  position: relative;
+/* desktop-first */
+/* загальні властивості для широкого екрану */
+
+@media screen and (max-width: 760px){
+/* перевизначені -- для вузького */
+
+  section {
+    flex-direction: column;
+  }
 }
 
-a::before, a::after{
-  content: '';
-  width: 0;
-  transition: width 0.5s;
-  position: absolute;
-  height: 2px;
-}
+/* ---------------------------------------- */
+/* mobile-first */
 
-a::before{
-  right: 0;
-  top: 0;
-  background-image: linear-gradient(to left, coral, brown);
-}
+/* загальні властивості для вузького екрану */
+/* 
+...
+section {
+  display: flex;
+  flex-direction: column;
+  ...
+} 
+*/
 
-a::after{
-  left: 0;
-  bottom: 0;
-  background-image: linear-gradient(to right, coral, brown);
-}
-
-a:hover::before, a:hover::after{
- content: '';
- width: 100%;
-}
-
-/* Додати аналогічну лінію зверху (з верхнього правого кута вліво) */
-/* ::before */
+/* @media screen and (min-width: 760px){
+ перевизначені -- для широкого 
+  section {
+    flex-direction: row;
+  }
+} */
