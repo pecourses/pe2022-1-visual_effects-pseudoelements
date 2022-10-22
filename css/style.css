@@ -1,19 +1,43 @@
-
-
-a{
-  color: inherit;
-  text-decoration: none;
-  display: inline-block;
-  padding: 10px 20px ;
-  border: 2px solid grey;
-  margin: 10px;
-  transition: background-color 1s, box-shadow 1s;
-  /* transition: all 1s; */
+*{
+  box-sizing: border-box;
 }
 
-/* додати тінь до посилання 0.5s*/
+body{
+  background-color: orange;
+}
 
-a:hover{
-  background-color: aquamarine;
-  box-shadow: 0 0 3px black;
+header{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.blur-bg {
+  position: absolute;
+  background: url(https://images.pexels.com/photos/13366951/pexels-photo-13366951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px); 
+  transition: filter 1s;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+h1 {
+  transition: filter 1s;
+}
+
+h1:hover{
+  filter: blur(3px);
+}
+
+h1:hover + .blur-bg {
+  filter: blur(0);
 }
