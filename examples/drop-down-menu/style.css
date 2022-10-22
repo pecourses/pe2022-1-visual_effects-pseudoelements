@@ -1,0 +1,48 @@
+header {
+  padding: 20px;
+  color: wheat;
+  background-color: black;
+}
+ul {
+  display: flex;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20px;
+  width: 150px;
+  background-color: black;
+  border: 2px solid wheat;
+  transition: background-color 0.5s;
+}
+
+li:hover > a {
+  background-color: gray;
+}
+
+ul ul {
+  display: none;
+  position: absolute;
+}
+
+ul > li > ul {
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+ul > li > ul > li > ul {
+  top: 0;
+  left: 100%;
+  right: -100%;
+}
+
+nav > ul li {
+  position: relative;
+}
+
+ul > li:hover > ul {
+  display: flex;
+  flex-direction: column;
+}
