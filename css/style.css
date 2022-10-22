@@ -1,38 +1,49 @@
-*{
+* {
   box-sizing: border-box;
-  background-color: brown;
 }
 
-
-p::first-letter{
-  font-size: 36px;
-  color: red;
+ul{
+  font-size: 0;
+  margin: 20px;
+  white-space: nowrap;
 }
 
-p::first-line {
-  color: green;
+li {
+  display: inline-block;
 }
 
-p::selection {
-  color: wheat;
-  background-color: lightcoral;
+a{
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 20px;
+  font-size: 16px;
+  position: relative;
 }
 
-/* content обов'язковий для ::before і p::after*/
-p::before {
-  content: 'Paragraph: ';
+a::before, a::after{
+  content: '';
+  width: 0;
+  transition: width 0.5s;
+  position: absolute;
+  height: 2px;
 }
 
-p::after {
-  content: '!!!';
-  color: red;
-}
-/* За  допомогою ::before, ::after додати до Lorem << >> лапки */
-
-.quotes::before {
-  content: '<<';
+a::before{
+  right: 0;
+  top: 0;
+  background-image: linear-gradient(to left, coral, brown);
 }
 
-.quotes::after {
-  content: '>>';
+a::after{
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(to right, coral, brown);
 }
+
+a:hover::before, a:hover::after{
+ content: '';
+ width: 100%;
+}
+
+/* Додати аналогічну лінію зверху (з верхнього правого кута вліво) */
+/* ::before */
